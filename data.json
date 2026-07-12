@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "title": "Solar Borehole Construction",
+    "description": "Provision of clean water across various wards in Kaduna North.",
+    "mediaUrl": "https://images.unsplash.com/photo-1541888071854-3e9a594892c5?auto=format&fit=crop&w=1000&q=80",
+    "mediaType": "image",
+    "date": "2023-10-12"
+  },
+  {
+    "id": "2",
+    "title": "Youth Empowerment Program",
+    "description": "Distribution of empowerment materials to artisans and entrepreneurs.",
+    "mediaUrl": "https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=1000&q=80",
+    "mediaType": "image",
+    "date": "2023-11-05"
+  },
+  {
+    "id": "1783852416706",
+    "title": "URL Title",
+    "description": "URL Description",
+    "mediaUrl": "https://example.com/image.jpg",
+    "mediaType": "image",
+    "date": "2026-07-12"
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "name": "Hon. Bello El-Rufai Portfolio",
+  "description": "Professional website and admin dashboard for Hon. Bello El-Rufai, member of the House of Representatives.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
