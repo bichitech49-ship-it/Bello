@@ -3,6 +3,8 @@ import { ArrowRight, CheckCircle2, Navigation, Video, Image as ImageIcon, X, Cal
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 
+const profilePhoto = "https://i.ibb.co/N28XkJb4/182a4033-5d50-4809-8bb9-5e66e7d05dc4.jpg";
+
 interface Project {
   id: string;
   title: string;
@@ -23,7 +25,7 @@ export default function Home() {
   const navigate = useNavigate();
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
-  const [profileImage, setProfileImage] = useState("https://i.ibb.co/N28XkJb4/182a4033-5d50-4809-8bb9-5e66e7d05dc4.jpg");
+  const [profileImage, setProfileImage] = useState(profilePhoto);
   const [filter, setFilter] = useState<'all' | 'image' | 'video'>('all');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [secretClicks, setSecretClicks] = useState(0);
@@ -51,7 +53,7 @@ export default function Home() {
 
   const handleProfileImageError = () => {
     // Elegant fallback sequence if the primary image fails
-    if (profileImage === "https://i.ibb.co/N28XkJb4/182a4033-5d50-4809-8bb9-5e66e7d05dc4.jpg") {
+    if (profileImage === profilePhoto) {
       setProfileImage("https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80"); // High quality executive placeholder
     }
   };
@@ -94,7 +96,7 @@ export default function Home() {
           <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 lg:p-12 text-white w-full">
             <div className="backdrop-blur-md bg-slate-950/75 p-6 sm:p-8 rounded-2xl border border-white/10 shadow-2xl relative overflow-hidden">
               {/* Vibrant top line accent representing legislative duty */}
-              <div className="absolute top-0 left-0 right-0 h-[4px] bg-gradient-to-r from-red-600 via-rose-500 to-amber-500" />
+              <div className="absolute top-0 left-0 right-0 h-[4px] bg-gradient-to-r from-emerald-600 via-teal-500 to-amber-500" />
               
               <motion.h2 
                 initial={{ opacity: 0, y: 15 }}
@@ -111,7 +113,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.5 }}
                 className="flex flex-col gap-1"
               >
-                <p className="text-sm sm:text-base text-red-500 font-extrabold tracking-widest uppercase font-display">
+                <p className="text-sm sm:text-base text-amber-500 font-extrabold tracking-widest uppercase font-display">
                   Aspiring for Re-election & Continuous Quality Representation
                 </p>
                 <p className="text-xs sm:text-sm text-slate-300 font-semibold font-sans">
@@ -127,13 +129,13 @@ export default function Home() {
           <div className="max-w-xl">
             {/* Elegant Header with Name and Legislative Title */}
             <div className="mb-10 relative">
-              <div className="absolute -left-4 top-0 bottom-0 w-1 bg-red-600 rounded-full" />
+              <div className="absolute -left-4 top-0 bottom-0 w-1 bg-emerald-600 rounded-full" />
               <div className="pl-4">
                 <motion.div 
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
-                  className="inline-flex items-center space-x-2 text-red-600 font-extrabold tracking-widest uppercase text-xs mb-3 font-display"
+                  className="inline-flex items-center space-x-2 text-emerald-700 font-extrabold tracking-widest uppercase text-xs mb-3 font-display"
                 >
                   <span>Federal House of Representatives</span>
                 </motion.div>
@@ -170,7 +172,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="inline-flex items-center space-x-2 bg-red-50 text-red-700 px-4 py-1.5 rounded-full text-sm font-bold mb-8 border border-red-100 uppercase tracking-widest font-display"
+              className="inline-flex items-center space-x-2 bg-emerald-50 text-emerald-800 px-4 py-1.5 rounded-full text-sm font-bold mb-8 border border-emerald-100 uppercase tracking-widest font-display"
             >
               <CheckCircle2 size={16} />
               <span>Dedicated to Progress</span>
@@ -182,7 +184,7 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="font-display text-4xl lg:text-5xl font-bold mb-6 text-slate-900 leading-tight tracking-tight"
             >
-              Transforming Kaduna North Through <span className="text-red-600">Action.</span>
+              Transforming Kaduna North Through <span className="text-emerald-600">Action.</span>
             </motion.h2>
             
             <motion.p 
@@ -225,7 +227,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
               href="#projects" 
-              className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-red-600 to-rose-700 text-white rounded-xl font-bold hover:from-red-700 hover:to-rose-800 transition-all shadow-lg shadow-red-200 hover:-translate-y-1 font-display tracking-wide"
+              className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-emerald-600 to-emerald-800 hover:from-emerald-700 hover:to-emerald-900 text-white rounded-xl font-bold transition-all shadow-lg shadow-emerald-200/50 hover:-translate-y-1 font-display tracking-wide"
             >
               View Community Projects
               <ArrowRight className="ml-3" size={20} />
@@ -244,12 +246,12 @@ export default function Home() {
             className="flex flex-col md:flex-row md:justify-between md:items-end mb-16 space-y-6 md:space-y-0"
           >
             <div>
-              <h3 className="text-sm font-bold tracking-widest text-red-600 uppercase mb-3 flex items-center font-display">
-                <span className="w-8 h-0.5 bg-red-600 mr-3"></span>
+              <h3 className="text-sm font-bold tracking-widest text-emerald-600 uppercase mb-3 flex items-center font-display">
+                <span className="w-8 h-0.5 bg-emerald-600 mr-3"></span>
                 Our Impact
               </h3>
               <h2 className="font-display text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight leading-tight">
-                Political Achievements & <span className="text-red-600">Community Projects</span>
+                Political Achievements & <span className="text-emerald-600">Community Projects</span>
               </h2>
             </div>
 
@@ -261,7 +263,7 @@ export default function Home() {
                   onClick={() => setFilter(type)}
                   className={`px-5 py-2.5 rounded-xl text-sm font-bold tracking-wide capitalize transition-all duration-300 font-display ${
                     filter === type
-                      ? 'bg-white text-red-600 shadow-md'
+                      ? 'bg-white text-emerald-700 shadow-md'
                       : 'text-slate-600 hover:text-slate-950'
                   }`}
                 >
@@ -273,7 +275,7 @@ export default function Home() {
 
           {loading ? (
             <div className="flex justify-center py-20">
-              <div className="w-10 h-10 border-4 border-red-600 border-t-transparent rounded-full animate-spin" />
+              <div className="w-10 h-10 border-4 border-emerald-600 border-t-transparent rounded-full animate-spin" />
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
@@ -298,7 +300,7 @@ export default function Home() {
                           {/* Hover action overlay */}
                           <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-center justify-center">
                             <span className="bg-white/90 backdrop-blur-md p-3.5 rounded-full text-slate-900 shadow-lg transform scale-90 group-hover:scale-100 transition-transform duration-300">
-                              <Maximize2 size={20} className="text-red-600" />
+                              <Maximize2 size={20} className="text-emerald-600" />
                             </span>
                           </div>
 
@@ -311,7 +313,7 @@ export default function Home() {
                                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                                 />
                                 <div className="absolute inset-0 bg-slate-950/20 flex items-center justify-center">
-                                  <span className="bg-red-600 p-3.5 rounded-full text-white shadow-lg">
+                                  <span className="bg-emerald-600 p-3.5 rounded-full text-white shadow-lg">
                                     <Video size={20} />
                                   </span>
                                 </div>
@@ -323,7 +325,7 @@ export default function Home() {
                                   className="w-full h-full object-cover"
                                 />
                                 <div className="absolute inset-0 bg-slate-950/30 flex items-center justify-center">
-                                  <span className="bg-red-600 p-3.5 rounded-full text-white shadow-lg">
+                                  <span className="bg-emerald-600 p-3.5 rounded-full text-white shadow-lg">
                                     <Video size={20} />
                                   </span>
                                 </div>
@@ -344,16 +346,16 @@ export default function Home() {
 
                         <div className="p-8 bg-white border-t border-slate-100 rounded-b-3xl flex-1 flex flex-col justify-between">
                           <div>
-                            <div className="flex items-center space-x-2 text-xs font-bold text-red-600 uppercase tracking-wider mb-2 font-display">
+                            <div className="flex items-center space-x-2 text-xs font-bold text-emerald-700 uppercase tracking-wider mb-2 font-display">
                               {project.mediaType === 'video' ? <Video size={14} /> : <ImageIcon size={14} />}
                               <span>{project.mediaType === 'video' ? 'Video Report' : 'Photo Insight'}</span>
                             </div>
-                            <h4 className="font-display text-2xl font-bold text-slate-900 mb-3 group-hover:text-red-600 transition-colors leading-snug">{project.title}</h4>
+                            <h4 className="font-display text-2xl font-bold text-slate-900 mb-3 group-hover:text-emerald-700 transition-colors leading-snug">{project.title}</h4>
                             <p className="text-slate-600 leading-relaxed text-base line-clamp-3">
                               {project.description}
                             </p>
                           </div>
-                          <div className="mt-6 pt-5 border-t border-slate-100 flex items-center justify-between text-slate-400 group-hover:text-red-600 transition-all font-display">
+                          <div className="mt-6 pt-5 border-t border-slate-100 flex items-center justify-between text-slate-400 group-hover:text-emerald-700 transition-all font-display">
                             <span className="text-xs font-black tracking-widest uppercase">View full achievement details</span>
                             <ArrowRight size={16} className="transform group-hover:translate-x-1.5 transition-transform" />
                           </div>
@@ -382,7 +384,7 @@ export default function Home() {
             {/* Close Button */}
             <button 
               onClick={() => setSelectedProject(null)}
-              className="absolute top-4 right-4 z-50 p-2.5 rounded-full bg-slate-900/80 text-white hover:bg-slate-900 hover:text-red-500 transition-colors border border-white/10 shadow-lg"
+              className="absolute top-4 right-4 z-50 p-2.5 rounded-full bg-slate-900/80 text-white hover:bg-slate-900 hover:text-emerald-500 transition-colors border border-white/10 shadow-lg"
               title="Close viewer"
             >
               <X size={20} />
@@ -427,7 +429,7 @@ export default function Home() {
             {/* Description Card info */}
             <div className="p-8 sm:p-10 overflow-y-auto border-t border-slate-100">
               <div className="flex flex-wrap items-center gap-4 mb-4">
-                <span className="bg-red-50 text-red-600 px-3.5 py-1.5 rounded-xl text-xs font-bold tracking-widest uppercase font-display border border-red-100 flex items-center gap-1.5">
+                <span className="bg-emerald-50 text-emerald-700 px-3.5 py-1.5 rounded-xl text-xs font-bold tracking-widest uppercase font-display border border-emerald-100 flex items-center gap-1.5">
                   {selectedProject.mediaType === 'video' ? <Video size={14} /> : <ImageIcon size={14} />}
                   {selectedProject.mediaType}
                 </span>
